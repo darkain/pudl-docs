@@ -7,7 +7,7 @@ PUDL stands for "_PHP Universal Database Library_" and can simply be described a
 
 ## Getting Started
 
-### Creating an instance of the initial PUDL object
+### Supported Database Engines and PHP Extensions
 Class		| Support		| Information
 ------------|---------------|------------
 pudl		| Full			| The core shared API
@@ -20,32 +20,44 @@ pudlSqlSrv	| Partial		| Modern Microsoft SQL Server
 pudlPgSql	| Partial		| PostgreSQL
 pudlSqlite	| Partial		| Local Sqlite3 file
 pudlOdbc	| Partial		| Open Database Connectivity
+pudlPdo		| Partial		| PHP's built in PDO
 pudlShell	| Experimental	| JSON API accessed via piped connections on a local shell
 pudlWeb		| Experimental	| JSON API accessed via HTTP(s)
-pudlPdo		| Partial		| PHP's built in PDO
 
 ### Basic Queries
+
+
 
 ## API Documentation
 ### Classes
 
-### Interfaces
-* pudlData
-* pudlHelper
-* pudlId
-* pudlValue
 
 ### Constants
-* PUDL_ main PUDL constants
-* GALERA_ constants used for Galera cluster status
+Prefix								| Information
+------------------------------------|------------
+[PUDL_](constants/pudl.md)			| Main PUDL constants
+[GALERA_](constants/galera.md)		| Galera cluster status
+
+
+### Interfaces
+Interface							| Information
+------------------------------------|------------
+[pudlData](pudlData)				| Used internally to identify specific data structures
+[pudlHelper](pudlHelper)			| Used internally to identify special PUDL related classes
+[pudlId](pudlId)					| Allows an object to be passed into an Id() function as a value
+[pudlValue](pudlValue)				| Used internally to identify special PUDL values
+
+
+### Object-Relational Mapping (ORM)
+Class								| Information
+------------------------------------|------------
+[pudlObject](pudlObject)			| A basic object that acts like a PHP Array
+[pudlOrm](pudlOrm)					| A hybrid between pudlObject and the main PUDL interface
+[pudlCollection](pudlCollection)	| A collection of pudlOrm objects
+
 
 ### Importing / Exporting
 * pudlImport
 * pudlImportCsv
 * pudlImportExcel
 * pudlExportExcel
-
-## Object-Relational Mapping (ORM)
-* [pudlObject](pudlObject) - a basic object that acts like a PHP Array
-* [pudlOrm](pudlOrm) - a hybrid between pudlObject and the main PUDL interface
-* [pudlCollection](pudlCollection) - a collection of pudlOrm objects
