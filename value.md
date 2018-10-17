@@ -226,8 +226,8 @@ SELECT * FROM `table` WHERE (`column` IN ('a', 'b', 'c'))
 
 
 ### [$insert](insert.md): JSON string.
-`INSERT` queries treat `array`s as complex data, and will convert it to a `JSON`
-`string` before inserting into the database.
+`INSERT` queries treat `array` data type as complex data, and will convert it to
+a `JSON` `string` before inserting into the database.
 ```php
 /* PHP PUDL API */
 $db->insert('table', ['column' => ['a', 'b', 'c']]);
