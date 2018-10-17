@@ -220,14 +220,20 @@ comparison.
 $db->rows('table', ['column' => ['a', 'b', 'c']]);
 ```
 ```sql
-/* Generated SQL Query */SELECT * FROM `table` WHERE (`column` IN ('a', 'b', 'c'))
+/* Generated SQL Query */
+SELECT * FROM `table` WHERE (`column` IN ('a', 'b', 'c'))
 ```
 
 
 ### [$insert](insert.md): JSON string.
 `INSERT` queries treat `array`s as complex data, and will convert it to a `JSON`
 `string` before inserting into the database.
+```php
+/* PHP PUDL API */
+$db->insert('table', ['column' => ['a', 'b', 'c']]);
+```
 ```sql
+/* Generated SQL Query */
 INSERT INTO `table` (`column`) VALUES ('[\"a\",\"b\",\"c\"]')
 ```
 
