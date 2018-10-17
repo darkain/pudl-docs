@@ -1,2 +1,1 @@
-## STUB
-This is a stub file for documentation that is still be written.
+* `string` - The name of a single SQL table.
