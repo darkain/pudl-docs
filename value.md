@@ -195,7 +195,7 @@ SELECT * FROM `table` WHERE (`column`=0xefbc88e295afc2b0e296a1c2b0efbc89e295afef
 ## `array` and `object` implementing [`ArrayAccess`](http://php.net/manual/en/class.arrayaccess.php)
 
 
-###[$clause](clause.md): Recursive AND/OR (without __$key__).
+### [$clause](clause.md): Recursive AND/OR (without __$key__).
 When an array does not have a __$key__, it is treated as nested AND/OR blocks.
 These can be nested up to 30 levels deep.
 ```php
@@ -211,7 +211,7 @@ SELECT * FROM `table` WHERE ((`column1`='a' OR `column2`='b') AND (`column3`='c'
 ```
 
 
-###[$clause](clause.md): `IN (set)` (with __$key__).
+### [$clause](clause.md): `IN (set)` (with __$key__).
 When an array does have a __$key__, the __$key__ is treated as a `column` name
 with the array being treated as a list of items to search with a SQL `IN`
 comparison.
@@ -224,7 +224,7 @@ $db->rows('table', ['column' => ['a', 'b', 'c']]);
 ```
 
 
-###[$insert](insert.md): JSON string.
+### [$insert](insert.md): JSON string.
 `INSERT` queries treat `array`s as complex data, and will convert it to a `JSON`
 `string` before inserting into the database.
 ```sql
