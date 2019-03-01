@@ -5,6 +5,8 @@
 ## What is PUDL
 PUDL stands for "_PHP Universal Database Library_" and can simply be described as "_PDO on crack._" PUDL provides a straightforward, simple, and standardized API for connecting to various database engines using the available PHP extensions transparently. Additionally, PUDL provides APIs for automatically generating SQL queries as well as processing the resulting data.
 
+The subtle nuances of each database's SQL implementation are handled automatically behind the scenes by PUDL.
+
 ## Getting Started
 
 ### Supported Database Engines and PHP Extensions
