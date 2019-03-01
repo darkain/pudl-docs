@@ -8,21 +8,22 @@ PUDL stands for "_PHP Universal Database Library_" and can simply be described a
 ## Getting Started
 
 ### Supported Database Engines and PHP Extensions
-Class		| Support		| Information
-------------|---------------|------------
-pudl		| Full			| The core shared API
-pudlNull	| Full			| Think _/dev/null_, no connection made, calls return default value
-pudlMySql	| Full			| Legacy MySQL (_deprecated in PHP 5.5.0, removed in PHP 7.0.0_)
-pudlMySqli	| Full			| Modern MySQL, MariaDB, and Percona
-pudlGalera	| Full			| MySqli interface extended with Galera multi-master clustering
-pudlMsSql	| Partial		| Legacy Microsoft SQL Server (_removed in PHP 7.0.0_)
-pudlSqlSrv	| Partial		| Modern Microsoft SQL Server
-pudlPgSql	| Partial		| PostgreSQL
-pudlSqlite	| Partial		| Local Sqlite3 file
-pudlOdbc	| Partial		| Open Database Connectivity
-pudlPdo		| Partial		| PHP's built in PDO
-pudlShell	| Experimental	| JSON API accessed via piped connections on a local shell
-pudlWeb		| Experimental	| JSON API accessed via HTTP(s)
+Class							| Support	| Information
+--------------------------------|-----------|------------
+[pudl/pudl.md]([pudl])			| Full		| The core shared API
+[null/null.md](pudlNull)		| Full		| Think _/dev/null_, no connection made, calls return default value
+[mysql/mysql.md](pudlMySql)		| Full		| Legacy MySQL (_deprecated in PHP 5.5.0, removed in PHP 7.0.0_)
+[mysql/mysqli.md](pudlMySqli)	| Full		| Modern MySQL, MariaDB, and Percona
+[mysql/galera.md](pudlGalera)	| Full		| MySqli interface extended with Galera multi-master clustering
+[mssql/mssql.md](pudlMsSql)		| Partial	| Legacy Microsoft SQL Server (_removed in PHP 7.0.0_)
+[mssql/sqlsrv.md](pudlSqlSrv)	| Partial	| Modern Microsoft SQL Server
+[pgsql/pgsql.md](pudlPgSql)		| Partial	| PostgreSQL
+[sqlite/sqlite.md](pudlSqlite)	| Partial	| Local Sqlite3 file
+[odbc/odbc.md](pudlOdbc)		| Partial	| Open Database Connectivity
+[pdo/pdo.md](pudlPdo)			| Partial	| PHP's built in PDO
+[sql/clone.md](pudlClone)		| Early		| A cloned interface linking to another PUDL instance
+[sql/shell.md](pudlShell)		| Early		| JSON API accessed via piped connections on a local shell
+[sql/web.md](pudlWeb)			| Early		| JSON API accessed via HTTP(s)
 
 ### Basic Queries
 
