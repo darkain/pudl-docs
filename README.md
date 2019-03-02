@@ -1,3 +1,9 @@
+<style>
+.tablelines table, .tablelines td, .tablelines th {
+	border: 1px solid black;
+}
+</style>
+
 * _NOTE: This is a "work in progress" document and will take a few weeks to be fully filled out. Most things listed in this document will become full pages of their own and linked here in the very near future._
 
 # PUDL Documentation
