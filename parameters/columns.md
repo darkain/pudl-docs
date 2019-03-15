@@ -1,4 +1,5 @@
 # $columns
+-----
 
 $columns _(plural)_ represents a single column or several columns. The desired
 columns may be specified using a variety of PHP data types and string formats.
@@ -6,7 +7,8 @@ columns may be specified using a variety of PHP data types and string formats.
 
 
 ## `'*'` _(string containing single star character)_
-* `string` value `'*'` - If the string is a `'*'`, no processing happens, and
+-----
+* If the string is a `'*'`, no processing happens, and
 it is passed through to the query unmodified. This is used for `SELECT *`
 statements.
 
@@ -23,22 +25,26 @@ SELECT * FROM `table`
 
 
 ## `''` _(empty string)_
+-----
 * Alias of `'*'`.
 
 
 
 ## `NULL`
+-----
 * Alias of `'*'`.
 
 
 
 ## `FALSE` _(boolean)_
+-----
 * Alias of `'*'`.
 __WARNING__ this is deprecated, and will change before PUDL 3.0
 
 
 
 ## `string`
+-----
 * Either the name of a single column or a comma separated list of
 columns inside of the string. Each column name is automatically escaped and
 wrapped in backticks (or equivalent). Dots are separated out to denote the
@@ -64,6 +70,7 @@ SELECT `table`.`latitude`, `table`.`longitude` FROM `table`
 
 
 ## `array`
+-----
 Each element of the array is treated as a single `string`. If the `array` index
 is an `integer`, no further processing happens. If the `array` index is a
 string, it is treated as a column alias in the format `` `VALUE` AS `KEY` ``. A
@@ -95,11 +102,13 @@ SELECT `table`.`latitude` AS `lat`, `table`.`longitude` AS `lon` FROM `table`
 
 
 ## `object` implementing `ArrayAccess`
+-----
 * Alias of `array`.
 
 
 
 ## All other data types
+-----
 * Treat the value as a [`$value`](value.md).
 
 PHP:
