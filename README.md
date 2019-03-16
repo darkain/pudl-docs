@@ -66,3 +66,132 @@ Class								| Information
 * pudlImportCsv
 * pudlImportExcel
 * pudlExportExcel
+
+
+### PUDL Methods
+
+
+
+#### SQL DML (Data Manipulation Language)
+
+##### SELECT
+* select
+* having
+* group
+* groupHaving
+* orderGroup
+* orderGroupEx
+* distinct
+* distinctGroup
+* selectExplain
+* selex
+* selectRow
+* row
+* rowEx
+* selectRows
+* rows
+* rowId
+* rowsId
+* cell
+* cellId
+* id
+* collection
+* estimate
+* total
+* count
+* countId
+* countGroup
+
+##### INSERT / UPSERT / REPLACE
+* insert
+* upsert
+* insertId
+* insertValues
+* insertExtract
+* upsertExtract
+* insertUpdate
+* insertEx
+* insertInto
+* replace
+* replaceEx
+* replaceInto
+
+##### UPDATE
+* updated
+* update
+* updateIn
+* updateId
+* updateExtract
+* updateExtractIn
+* updateExtractId
+* updateField
+* updateFieldId
+* updateCount
+* increase
+* incrementId
+
+##### DELETE
+* delete
+* deleteId
+* deleteRow
+
+
+
+#### SQL TCL (Transaction Control Language)
+* inTransaction
+* retryTransaction
+* lock
+* unlock
+
+##### BEGIN / START TRANSACTION
+* begin
+
+##### SAVEPOINT
+* savepoint
+* release
+
+##### COMMIT TRANSACTION
+* commit
+* chunk
+
+##### ROLLBACK TRANSACTION
+* rollback
+
+
+
+
+#### SQL DDL (Data Definition Language)
+* tables
+* tableExists
+* tableStatus
+
+##### CREATE
+* create _(experimental)_
+
+##### ALTER
+* alter _(not available yet)_
+* addVersioning
+
+##### DROP
+* drop
+
+##### TRUNCATE
+* truncate
+
+##### COMMENT
+* _(not available yet)_
+
+##### RENAME
+* rename
+* swapTables
+
+
+
+
+#### SQL DCL (Data Control Language)
+
+##### GRANT
+* _(not available yet)_
+
+##### REVOKE
+* _(not available yet)_
