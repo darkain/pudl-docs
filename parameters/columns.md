@@ -1,12 +1,12 @@
-# $columns
------
+$columns
+=====
 
 $columns _(plural)_ represents a single column or several columns. The desired
 columns may be specified using a variety of PHP data types and string formats.
 
 
 
-## `'*'` _(string containing single star character)_
+`'*'` _(string containing single star character)_
 -----
 * If the string is a `'*'`, no processing happens, and
 it is passed through to the query unmodified. This is used for `SELECT *`
@@ -24,26 +24,26 @@ SELECT * FROM `table`
 
 
 
-## `''` _(empty string)_
+`''` _(empty string)_
 -----
 * Alias of `'*'`.
 
 
 
-## `NULL`
+`NULL`
 -----
 * Alias of `'*'`.
 
 
 
-## `FALSE` _(boolean)_
+`FALSE` _(boolean)_
 -----
 * Alias of `'*'`.
 __WARNING__ this is deprecated, and will change before PUDL 3.0
 
 
 
-## `string`
+`string`
 -----
 * Either the name of a single column or a comma separated list of
 columns inside of the string. Each column name is automatically escaped and
@@ -69,7 +69,7 @@ SELECT `table`.`latitude`, `table`.`longitude` FROM `table`
 
 
 
-## `array`
+`array`
 -----
 Each element of the array is treated as a single `string`. If the `array` index
 is an `integer`, no further processing happens. If the `array` index is a
@@ -101,13 +101,13 @@ SELECT `table`.`latitude` AS `lat`, `table`.`longitude` AS `lon` FROM `table`
 
 
 
-## `object` implementing `ArrayAccess`
+`object` implementing `ArrayAccess`
 -----
 * Alias of `array`.
 
 
 
-## All other data types
+All other data types
 -----
 * Treat the value as a [`$value`](value.md).
 
