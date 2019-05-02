@@ -3,7 +3,7 @@
 Comparison of creating a PUDL object vs PHP's mysqli and PDO.
 
 
-__PUDL__
+## PUDL
 
 PUDL is designed to be standardized and simplified across all of its method
 parameters. By keeping everything in a key-value pair, configurations are easier
@@ -11,6 +11,10 @@ to manage and pass between methods. This also allows for additional optional
 parameters to be configured, such as persistent connections. Additionally, PUDL
 is standardized for all database types, simply changing the 'type' parameter is
 all that is required to switch from one type of database server to another.
+
+_NOTE: internally, PUDL uses PHP's MySQLi driver for 'mysql' type connections,
+but the internal complexities are abstracted away so you don't need to think
+about them_
 
 ```php
 require_once('pudl/pudl.php');
@@ -27,7 +31,7 @@ $db = pudl::instance([
 ```
 
 
-__MySQLi__
+## MySQLi
 
 MySQLi connections are built in three stages instead of one. First, create the
 object instance. Then set the connection properties. Lastly, execute the
@@ -52,7 +56,7 @@ $db->real_connect(
 ```
 
 
-__PDO__
+## PDO
 
 PDO is a parameter mess by comparison. First there is a database implementation
 specific string, followed by two more strings for individual values, followed by
@@ -74,4 +78,3 @@ $db = new PDO(
 	]
 );
 ```
-
