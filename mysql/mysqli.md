@@ -1,6 +1,10 @@
-# Getting Started
+# Getting Started with PUDL for MySQL Server
 ---
 Comparison of creating a PUDL object vs PHP's mysqli and PDO.
+
+_NOTE: The PUDL MySQLi interface supports MySQL Server, MariaDB, and Percona
+Server_
+
 
 
 ## PUDL
