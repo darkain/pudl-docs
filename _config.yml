@@ -1,3 +1,5 @@
 theme: jekyll-theme-hacker
 markdown: GFM
 root: /
+baseurl: /
+url: https://pudl.dev
