@@ -105,6 +105,7 @@ Class								| Information
 ##### INSERT / UPSERT / REPLACE
 * insert
 * upsert
+* exsert
 * insertId
 * insertValues
 * insertExtract
