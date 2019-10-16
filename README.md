@@ -15,7 +15,7 @@ Class							| Support	| Information
 [pudl](pudl/pudl.md)			| Full		| The core shared API for connecting database
 [pudlNull](null/null.md)		| Full		| Think _/dev/null_, no connection made, calls return default value
 
-[pudlMySqli](mysql/mysqli.md)	| Full		| Modern MySQL, MariaDB, and Percona
+
 [pudlGalera](mysql/galera.md)	| Full		| MySqli interface extended with Galera multi-master clustering
 [pudlMsSql](mssql/mssql.md)		| Partial	| Legacy Microsoft SQL Server (_removed in PHP 7.0.0_)
 [pudlSqlSrv](mssql/sqlsrv.md)	| Partial	| Modern Microsoft SQL Server
