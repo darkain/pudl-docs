@@ -12,9 +12,9 @@ The subtle nuances of each database's SQL implementation are handled automatical
 ### Supported Database Engines and PHP Extensions
 Class							| Support	| Information
 --------------------------------|-----------|------------
-[pudl](pudl/pudl.md)			| Full		| The core shared API
+[pudl](pudl/pudl.md)			| Full		| The core shared API for connecting database
 [pudlNull](null/null.md)		| Full		| Think _/dev/null_, no connection made, calls return default value
-[pudlMySql](mysql/mysql.md)		| Full		| Legacy MySQL (_deprecated in PHP 5.5.0, removed in PHP 7.0.0_)
+
 [pudlMySqli](mysql/mysqli.md)	| Full		| Modern MySQL, MariaDB, and Percona
 [pudlGalera](mysql/galera.md)	| Full		| MySqli interface extended with Galera multi-master clustering
 [pudlMsSql](mssql/mssql.md)		| Partial	| Legacy Microsoft SQL Server (_removed in PHP 7.0.0_)
@@ -25,7 +25,7 @@ Class							| Support	| Information
 [pudlPdo](pdo/pdo.md)			| Partial	| PHP's built in PDO
 [pudlClone](sql/clone.md)		| Early		| A cloned interface linking to another PUDL instance
 [pudlShell](sql/shell.md)		| Early		| JSON API accessed via piped connections on a local shell
-[pudlWeb](sql/web.md)			| Early		| JSON API accessed via HTTP(s)
+
 
 ### Basic Queries
 
