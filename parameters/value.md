@@ -376,7 +376,7 @@ SELECT * FROM `table` WHERE `column`='test text'
 
 
 ### Examples:
-* `object` (not matching `pudlValue`, `ArrayAccess`, or `__toString()`)
+* `object` (not matching `pudlValue`, `ArrayAccess`, `__toString()`, or `callable`)
 * `resource`
 * `iterable`
 * `void`
