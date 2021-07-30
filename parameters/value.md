@@ -15,12 +15,18 @@ __Table of Contents__
 * [`array` and `ArrayAccess`](#array-and-object-implementing-arrayaccess)
 * [`pudlValue`](#object-implementing-pudlvalue)
 * [`__toString`](#object-implementing-__tostring)
+* [`callable`](#callable)
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## `NULL`, `NaN` _(not a number)_, `INF` _(infinite)_ and `-INF` _(negative infinite)_
 
+
+&nbsp;
 
 ### SQL `IS NULL` for [$clause](clause.md) comparisons.
 ```php
@@ -33,6 +39,8 @@ SELECT * FROM `table` WHERE (`column` IS NULL)
 ```
 
 
+&nbsp;
+
 ### Literal SQL `NULL` for `INSERT` and `UPDATE` data.
 ```php
 /* PHP PUDL API */
@@ -43,6 +51,8 @@ $db->insert('table', ['column' => NULL]);
 INSERT INTO `table` (`column`) VALUES (NULL)
 ```
 
+
+&nbsp;
 
 ### `NaN` treated as literal SQL `NULL` (`INF` and `-INF` do the same).
 ```php
@@ -56,9 +66,14 @@ SELECT * FROM `table` WHERE (`column` IS NULL)
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## `boolean` `TRUE` and `FALSE`
 
+
+&nbsp;
 
 ### Literal SQL `TRUE`.
 ```php
@@ -70,6 +85,8 @@ $db->rows('table', ['column' => TRUE]);
 SELECT * FROM `table` WHERE (`column`=TRUE)
 ```
 
+
+&nbsp;
 
 ### Literal SQL `FALSE`.
 ```php
@@ -83,9 +100,14 @@ SELECT * FROM `table` WHERE (`column`=FALSE)
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## `integer`
 
+
+&nbsp;
 
 ### Literal SQL `integer`.
 ```php
@@ -97,6 +119,8 @@ $db->rows('table', ['column' => 1]);
 SELECT * FROM `table` WHERE (`column`=1)
 ```
 
+
+&nbsp;
 
 ### Literal SQL negative `integer`.
 ```php
@@ -110,9 +134,14 @@ SELECT * FROM `table` WHERE (`column`=-5)
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## `float`
 
+
+&nbsp;
 
 ### Literal SQL `float`.
 ```php
@@ -124,6 +153,8 @@ $db->rows('table', ['column' => 2.3]);
 SELECT * FROM `table` WHERE (`column`=2.3)
 ```
 
+
+&nbsp;
 
 ### Literal SQL `float` using scientific notation.
 ```php
@@ -137,9 +168,14 @@ SELECT * FROM `table` WHERE (`column`=1.2E+23)
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## ASCII encoded `string`
 
+
+&nbsp;
 
 ### Quoted literal SQL `string`.
 ```php
@@ -151,6 +187,8 @@ $db->rows('table', ['column' => 'value']);
 SELECT * FROM `table` WHERE (`column`='value')
 ```
 
+
+&nbsp;
 
 ### Automatically escaped and quoted literal SQL `string`.
 ```php
@@ -164,9 +202,14 @@ SELECT * FROM `table` WHERE (`column`='va\'lue')
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## Binary `string` and UTF-8 encoded `string`
 
+
+&nbsp;
 
 ### Binary `string` converted to `hexadecimal` SQL literal
 ```php
@@ -178,6 +221,8 @@ $db->rows('table', ['column' => md5('PUDL Library',true)]);
 SELECT * FROM `table` WHERE (`column`=0xd08be06e8daa241016e8d2b923f974f3)
 ```
 
+
+&nbsp;
 
 ### UTF-8 `string` converted to `hexadecimal` SQL literal
 ```php
@@ -191,9 +236,14 @@ SELECT * FROM `table` WHERE (`column`=0xefbc88e295afc2b0e296a1c2b0efbc89e295afef
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## `array` and `object` implementing [`ArrayAccess`](http://php.net/manual/en/class.arrayaccess.php)
 
+
+&nbsp;
 
 ### [$clause](clause.md): Recursive AND/OR (without __$key__).
 When an array does not have a __$key__, it is treated as nested AND/OR blocks.
@@ -211,6 +261,8 @@ SELECT * FROM `table` WHERE ((`column1`='a' OR `column2`='b') AND (`column3`='c'
 ```
 
 
+&nbsp;
+
 ### [$clause](clause.md): `IN (set)` (with __$key__).
 When an array does have a __$key__, the __$key__ is treated as a `column` name
 with the array being treated as a list of items to search with a SQL `IN`
@@ -224,6 +276,8 @@ $db->rows('table', ['column' => ['a', 'b', 'c']]);
 SELECT * FROM `table` WHERE (`column` IN ('a', 'b', 'c'))
 ```
 
+
+&nbsp;
 
 ### [$insert](insert.md): JSON string.
 `INSERT` queries treat `array` data type as complex data, and will convert it to
@@ -239,9 +293,14 @@ INSERT INTO `table` (`column`) VALUES ('[\"a\",\"b\",\"c\"]')
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## `object` implementing [`pudlValue`](pudlValue/pudlValue.md)
 
+
+&nbsp;
 
 ### Calls `$object->pudlValue()`.
 ```php
@@ -255,9 +314,14 @@ SELECT * FROM `table` WHERE (`column` LIKE '%value%')
 
 
 
+&nbsp;
+---
+&nbsp;
 
 ## `object` implementing [`__toString`](http://php.net/manual/en/language.oop5.magic.php#object.tostring)
 
+
+&nbsp;
 
 ### Calls `$object->__toString()`, then processes the result the same as a [`string`](#ascii-encoded-string).
 ```php
@@ -278,6 +342,35 @@ SELECT * FROM `table` WHERE (`column`='value')
 
 
 
+&nbsp;
+---
+&nbsp;
+
+## `callable`
+
+
+&nbsp;
+
+### Calls `$value()`, then processes the result the back through the value processor.
+```php
+/* Closure */
+$myf = function() {
+    return 'test text';
+};
+
+/* PHP PUDL API */
+$db->rows('table', ['column' => $myf]);
+```
+```sql
+/* Generated SQL Query */
+SELECT * FROM `table` WHERE `column`='test text'
+```
+
+
+
+&nbsp;
+---
+&nbsp;
 
 ## All other values
 
@@ -285,7 +378,6 @@ SELECT * FROM `table` WHERE (`column`='value')
 ### Examples:
 * `object` (not matching `pudlValue`, `ArrayAccess`, or `__toString()`)
 * `resource`
-* `callable`
 * `iterable`
 * `void`
 
