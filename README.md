@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/darkain/pudl.svg?branch=master)](https://travis-ci.com/darkain/pudl)
 
 
-* [Documentation (work in progress)](https://github.com/darkain/pudl-docs/blob/master/README.md)
+* [Documentation](https://pudl.dev/documentation)
 * [About](#about)
 * [Supported Database Engines](#supported-database-engines)
 * [License](#license)
