@@ -1,6 +1,8 @@
 # PHP Universal Database Library - PUDL
 
 
+* [Source Code (GitHub)](https://github.com/darkain/pudl/)
+* [Releases](https://github.com/darkain/pudl/releases/)
 * [Documentation](https://pudl.dev/documentation)
 * [About](#about)
 * [Supported Database Engines](#supported-database-engines)
@@ -10,10 +12,6 @@
 	* [INSERT](#insert)
 	* [UPDATE](#update)
 	* [SELECT](#select)
-* [General API Guide](#general-api-guide)
-	* [Method Parameters](#method-parameters)
-	* [SELECT](#select)
-	* [pudlResult](#pudlresult)
 
 
 
@@ -26,10 +24,6 @@ This is accomplished using a simplistic procedural style of programming rather
 than a more complex ORM style of programming. No custom classes outside of PUDL
 are required to take full advantage of this library.
 
-The [test](https://github.com/darkain/pudl/tree/master/test) folder contains
-a series of examples of PUDL function calls and their resulting SQL query
-strings. This is a good place to get an idea of what the PUDL library is
-designed for beyond what is documented on this page.
 
 
 
@@ -52,12 +46,16 @@ Web | [pudlWeb](https://github.com/darkain/pudl/blob/master/sql/pudlWeb.php) | *
 Clone | [pudlClone](https://github.com/darkain/pudl/blob/master/clone/pudlClone.php) | *Experimental Hack* | Cloned interface forwarding calls to another PUDL instance
 
 
+
+
 ## License
 This software library is licensed under the BSD 2-clause license, and may be
 freely used in any project (commercial, freelance, hobby, or otherwise) which
 is compatible with this license. See
 [LICENSE](https://github.com/darkain/pudl/blob/master/LICENSE)
 for more details.
+
+
 
 
 ## Usage
